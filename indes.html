@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Alex Carter | Elite Fiverr Portfolio</title>
+  <!-- Google Fonts & Font Awesome for Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0a0c10;
+      color: #eef2ff;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1a1f2a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3b48df;
+      border-radius: 12px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(14px);
+      background: rgba(10, 12, 16, 0.75);
+      border-bottom: 1px solid rgba(59, 72, 223, 0.3);
+      z-index: 100;
+      padding: 16px 0;
+    }
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff, #8a9eff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #cdd9ff;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+    .nav-links a:hover {
+      color: #6d8aff;
+      border-bottom: 2px solid #6d8aff;
+      padding-bottom: 4px;
+    }
+    .hire-btn {
+      background: linear-gradient(95deg, #3b48df, #636eff);
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: white !important;
+      border: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hire-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(59, 72, 223, 0.4);
+      border-bottom: none !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .hero-content {
+      flex: 1.2;
+    }
+    .hero-badge {
+      background: rgba(59, 72, 223, 0.2);
+      padding: 6px 16px;
+      border-radius: 60px;
+      display: inline-block;
+      font-size: 0.85rem;
+      border: 1px solid rgba(109, 138, 255, 0.4);
+      margin-bottom: 20px;
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      background: linear-gradient(to right, #ffffff, #b4c5ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 18px;
+    }
+    .highlight {
+      color: #6d8aff;
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+    }
+    .hero-desc {
+      font-size: 1.2rem;
+      color: #b4c2e0;
+      max-width: 550px;
+      margin-bottom: 32px;
+    }
+    .stats {
+      display: flex;
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+    .stat-item h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+    .stat-item p {
+      font-size: 0.85rem;
+      color: #8c9acf;
+    }
+    .cta-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #3b48df;
+      border: none;
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 6px 14px rgba(59, 72, 223, 0.3);
+    }
+    .btn-primary:hover {
+      background: #2f3bc2;
+      transform: scale(1.02);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #6d8aff;
+      padding: 12px 32px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #cdd9ff;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background: rgba(109, 138, 255, 0.1);
+      border-color: #a1b3ff;
+    }
+    .hero-avatar {
+      flex: 0.8;
+      text-align: center;
+      background: radial-gradient(circle at 30% 20%, rgba(59,72,223,0.2), transparent);
+      border-radius: 50%;
+      padding: 20px;
+    }
+    .avatar-circle {
+      width: 280px;
+      height: 280px;
+      background: linear-gradient(145deg, #262f4a, #11161f);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      box-shadow: 0 20px 35px rgba(0,0,0,0.4);
+      border: 2px solid #3b48df55;
+    }
+    .avatar-circle i {
+      font-size: 130px;
+      color: #6d8aff;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 50px;
+      letter-spacing: -0.3px;
+    }
+    .section-title span {
+      background: linear-gradient(135deg, #ffffff, #8596ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-bottom: 70px;
+    }
+    .service-card {
+      background: rgba(20, 24, 36, 0.7);
+      backdrop-filter: blur(4px);
+      border-radius: 28px;
+      padding: 32px 24px;
+      transition: all 0.25s ease;
+      border: 1px solid rgba(72, 87, 204, 0.3);
+      text-align: center;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: #6d8aff;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.5);
+      background: rgba(28, 34, 52, 0.8);
+    }
+    .service-icon {
+      font-size: 2.8rem;
+      color: #6d8aff;
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      color: #abb7e3;
+      margin-bottom: 20px;
+    }
+    .price-tag {
+      font-weight: 700;
+      background: #262e46;
+      display: inline-block;
+      padding: 6px 20px;
+      border-radius: 60px;
+      font-size: 1rem;
+    }
+
+    /* Portfolio Showcase (interactive hover + modal) */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      margin-bottom: 70px;
+    }
+    .portfolio-item {
+      background: #10131e;
+      border-radius: 28px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.2s;
+      border: 1px solid #272e44;
+    }
+    .portfolio-item:hover {
+      transform: scale(1.02);
+      border-color: #6d8aff;
+    }
+    .portfolio-img {
+      height: 220px;
+      background: linear-gradient(145deg, #1b2038, #0c0f18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: #6d8aff;
+    }
+    .portfolio-info {
+      padding: 20px;
+    }
+    .portfolio-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    .portfolio-info p {
+      color: #96a3d4;
+      font-size: 0.9rem;
+    }
+
+    /* Testimonials */
+    .testimonial-slider {
+      display: flex;
+      gap: 30px;
+      overflow-x: auto;
+      padding: 20px 8px 40px;
+      scroll-snap-type: x mandatory;
+    }
+    .testimonial-card {
+      min-width: 320px;
+      background: rgba(18, 22, 34, 0.8);
+      backdrop-filter: blur(8px);
+      border-radius: 30px;
+      padding: 28px;
+      border: 1px solid #2a3150;
+      scroll-snap-align: start;
+    }
+    .testimonial-card i.fa-quote-left {
+      color: #6d8aff;
+      font-size: 2rem;
+      opacity: 0.6;
+      margin-bottom: 16px;
+    }
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      color: #cddafc;
+    }
+    .client-name {
+      font-weight: 700;
+      margin-top: 8px;
+    }
+    .stars {
+      color: #ffbc3c;
+      margin: 8px 0;
+    }
+
+    /* Contact / CTA */
+    .contact-section {
+      background: linear-gradient(135deg, #0f1320, #07090f);
+      border-radius: 48px;
+      padding: 50px 40px;
+      text-align: center;
+      margin: 40px 0 60px;
+      border: 1px solid #2f396b;
+    }
+    .contact-section h2 {
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 0;
+      border-top: 1px solid #1f253e;
+      color: #7f8bb3;
+    }
+
+    /* Modal for project preview */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-card {
+      background: #12172a;
+      max-width: 500px;
+      width: 90%;
+      border-radius: 40px;
+      padding: 32px;
+      text-align: center;
+      border: 1px solid #6d8aff;
+      animation: fadeUp 0.2s ease;
+    }
+    .modal-card i {
+      font-size: 3rem;
+      color: #6d8aff;
+      margin-bottom: 20px;
+    }
+    .modal-card h3 {
+      font-size: 1.8rem;
+    }
+    .modal-card p {
+      margin: 20px 0;
+      color: #b6c6ff;
+    }
+    .close-modal {
+      background: #3b48df;
+      border: none;
+      padding: 10px 28px;
+      border-radius: 40px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.4rem;
+      }
+      .nav-links {
+        gap: 1rem;
+      }
+      .container {
+        padding: 0 20px;
+      }
+      .avatar-circle {
+        width: 200px;
+        height: 200px;
+      }
+      .avatar-circle i {
+        font-size: 90px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<div class="navbar">
+  <div class="container nav-flex">
+    <div class="logo">AlexCarter<span style="color:#6d8aff;">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact" class="hire-btn">Hire Me</a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+  <!-- Hero Section (home) -->
+  <div class="container" id="home">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-star" style="color:#ffbc3c;"></i> Fiverr Pro Seller · Top Rated
+        </div>
+        <h1>Premium <span class="highlight">Web & Brand</span> Solutions That Convert</h1>
+        <p class="hero-desc">High-end design & development for entrepreneurs ready to level up. 100% client satisfaction, unlimited revisions, and lightning-fast delivery.</p>
+        <div class="stats">
+          <div class="stat-item"><h3>350+</h3><p>Projects Done</p></div>
+          <div class="stat-item"><h3>98%</h3><p>Repeat Clients</p></div>
+          <div class="stat-item"><h3>5.0</h3><p>⭐ Fiverr Rating</p></div>
+        </div>
+        <div class="cta-group">
+          <button class="btn-primary" id="contactBtnHero"><i class="fab fa-fiverr"></i> Start Project</button>
+          <button class="btn-outline" id="viewWorkBtn"><i class="fas fa-arrow-right"></i> View Portfolio</button>
+        </div>
+      </div>
+      <div class="hero-avatar">
+        <div class="avatar-circle">
+          <i class="fas fa-user-astronaut"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="container" id="services">
+    <h2 class="section-title"><span>✧ Premium Gig Solutions ✧</span></h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-code"></i></div>
+        <h3>Web Dev</h3>
+        <p>Custom websites, modern landing pages, full‑stack apps. Pixel perfect & responsive.</p>
+        <span class="price-tag">Starting at $350</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-pen-fancy"></i></div>
+        <h3>UI/UX Design</h3>
+        <p>Beautiful, user‑centric interfaces that drive engagement and retention.</p>
+        <span class="price-tag">Starting at $280</span>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Brand Identity</h3>
+        <p>Complete visual identity, logos, and style guides to stand out from competitors.</p>
+        <span class="price-tag">Starting at $190</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Showcase (interactive modal) -->
+  <div class="container" id="portfolio">
+    <h2 class="section-title"><span>✦ Featured Work ✦</span></h2>
+    <div class="portfolio-grid" id="portfolioGrid"></div>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="container" id="testimonials">
+    <h2 class="section-title"><span>❤️ Fiverr Success Stories</span></h2>
+    <div class="testimonial-slider" id="testimonialSlider"></div>
+  </div>
+
+  <!-- Contact / Call to action -->
+  <div class="container" id="contact">
+    <div class="contact-section">
+      <h2>Ready to transform your online presence?</h2>
+      <p style="max-width: 600px; margin: 0 auto; color: #bcc7f0;">Let's collaborate and bring your vision to life with premium execution. Order on Fiverr or get a custom quote.</p>
+      <div class="contact-buttons">
+        <button class="btn-primary" id="contactModalBtn"><i class="fab fa-fiverr"></i> Message on Fiverr</button>
+        <button class="btn-outline" id="quoteBtn">Request Custom Quote</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2025 Alex Carter — Elite Fiverr Freelancer. Crafted with <i class="fas fa-heart" style="color:#ff5e7e;"></i> for global clients.</p>
+    <div style="margin-top: 12px;">
+      <i class="fab fa-fiverr" style="margin: 0 8px; color:#6d8aff;"></i>
+      <i class="fab fa-linkedin" style="margin: 0 8px;"></i>
+      <i class="fab fa-twitter" style="margin: 0 8px;"></i>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal structure -->
+<div id="projectModal" class="modal">
+  <div class="modal-card">
+    <i class="fas fa-rocket"></i>
+    <h3 id="modalTitle">Project Name</h3>
+    <p id="modalDesc">Detailed info about the project, tools used, and client feedback.</p>
+    <button class="close-modal" id="closeModalBtn">Close</button>
+  </div>
+</div>
+
+<script>
+  // Portfolio data (unique & attractive projects)
+  const portfolioItems = [
+    { title: "Fintech Dashboard", desc: "Interactive analytics dashboard with real-time data. Built for a London based startup. +62% user engagement.", icon: "fas fa-chart-pie" },
+    { title: "Luxury Spa Brand", desc: "Complete branding + high-end Webflow website. Increased bookings by 150% within 2 months.", icon: "fas fa-spa" },
+    { title: "E‑com Marketplace", desc: "Multi-vendor platform using React & Node. Seamless payment integration.", icon: "fas fa-store" },
+    { title: "AI Portfolio Gen", desc: "Generative AI-powered portfolio for an artist. Interactive & cutting-edge.", icon: "fas fa-brain" },
+    { title: "Fiverr Clone UI", desc: "Concept UI for service marketplace – modern, minimalist, high conversion.", icon: "fas fa-copy" },
+    { title: "NFT Gallery", desc: "Web3 gallery with wallet connect, highly responsive and artistic.", icon: "fas fa-palette" }
+  ];
+
+  // Testimonials data (realistic Fiverr style)
+  const testimonials = [
+    { name: "Sarah J. (Buyer)", text: "Alex exceeded my expectations! He delivered a stunning website ahead of schedule. Best Fiverr experience ever.", rating: 5, role: "eCommerce Owner" },
+    { name: "Michael T.", text: "Absolutely professional! The attention to detail and communication were top-tier. Will hire again.", rating: 5, role: "Startup Founder" },
+    { name: "Lina K.", text: "The brand identity he created for my business is pure magic. My sales increased dramatically. 10/10!", rating: 5, role: "Creative Director" },
+    { name: "David R.", text: "Very skilled developer. Understood my requirements perfectly and offered creative UI solutions. Highly recommended.", rating: 5, role: "Tech Lead" }
+  ];
+
+  // Render portfolio grid
+  function renderPortfolio() {
+    const grid = document.getElementById('portfolioGrid');
+    if(!grid) return;
+    grid.innerHTML = '';
+    portfolioItems.forEach((item, idx) => {
+      const portfolioEl = document.createElement('div');
+      portfolioEl.className = 'portfolio-item';
+      portfolioEl.setAttribute('data-idx', idx);
+      portfolioEl.innerHTML = `
+        <div class="portfolio-img">
+          <i class="${item.icon}" style="font-size: 3.5rem;"></i>
+        </div>
+        <div class="portfolio-info">
+          <h3>${item.title}</h3>
+          <p>${item.desc.substring(0, 70)}...</p>
+        </div>
+      `;
+      portfolioEl.addEventListener('click', () => {
+        openModal(item.title, item.desc);
+      });
+      grid.appendChild(portfolioEl);
+    });
+  }
+
+  // Render testimonials
+  function renderTestimonials() {
+    const slider = document.getElementById('testimonialSlider');
+    if(!slider) return;
+    slider.innerHTML = '';
+    testimonials.forEach(t => {
+      const stars = '★'.repeat(t.rating) + '☆'.repeat(5-t.rating);
+      const card = document.createElement('div');
+      card.className = 'testimonial-card';
+      card.innerHTML = `
+        <i class="fas fa-quote-left"></i>
+        <div class="testimonial-text">“${t.text}”</div>
+        <div class="stars">${stars}</div>
+        <div class="client-name">${t.name}</div>
+        <div style="font-size: 0.8rem; color:#8d9ee0;">${t.role}</div>
+      `;
+      slider.appendChild(card);
+    });
+  }
+
+  // Modal handling
+  const modal = document.getElementById('projectModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+
+  function openModal(title, desc) {
+    modalTitle.innerText = title;
+    modalDesc.innerText = desc;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  // Click actions for CTA buttons (Fiverr interaction simulation)
+  const contactHeroBtn = document.getElementById('contactBtnHero');
+  const viewWorkBtn = document.getElementById('viewWorkBtn');
+  const contactModalBtn = document.getElementById('contactModalBtn');
+  const quoteBtn = document.getElementById('quoteBtn');
+  
+  if(contactHeroBtn) {
+    contactHeroBtn.addEventListener('click', () => {
+      alert("📢 Direct Fiverr link: https://www.fiverr.com/alex_carter_pro \n(Simulated) — Start your project now with 20% off first order!");
+    });
+  }
+  if(contactModalBtn) {
+    contactModalBtn.addEventListener('click', () => {
+      alert("✅ Let's connect on Fiverr! Click to get premium service: (https://fiverr.com/alexpro)");
+    });
+  }
+  if(quoteBtn) {
+    quoteBtn.addEventListener('click', () => {
+      alert("📧 Custom quote request: alex@carterdesign.com — I'll reply within 2 hours with a personalized proposal.");
+    });
+  }
+  if(viewWorkBtn) {
+    viewWorkBtn.addEventListener('click', () => {
+      document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  // Also handle "Hire Me" from navbar and other interactions
+  const hireNavBtn = document.querySelector('.hire-btn');
+  if(hireNavBtn) {
+    hireNavBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  // smooth nav links
+  document.querySelectorAll('.nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if(href && href.startsWith('#')) {
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if(targetElement) targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Close modal on click outside or button
+  window.addEventListener('click', (e) => {
+    if(e.target === modal) closeModal();
+  });
+  if(closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+
+  // Additional dynamic stats update (just for fun, counts)
+  function animateNumbers() {
+    const statNumbers = document.querySelectorAll('.stat-item h3');
+    if(statNumbers.length) {
+      // already static but just to reflect fiverr vibe
+      console.log("Fiverr portfolio ready");
+    }
+  }
+
+  // Initialize on load
+  document.addEventListener('DOMContentLoaded', () => {
+    renderPortfolio();
+    renderTestimonials();
+    animateNumbers();
+    // For extra attraction: automatic sliding effect is scrollable anyway
+  });
+</script>
+</body>
+</html>
